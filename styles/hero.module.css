@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 37px;
+    margin-top: 0px;
 }
 
 .avatar {
@@ -11,10 +11,17 @@
 
 .title {
     justify-self: end;
-    margin-top: 70px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.btnGrp {
+    margin-top: 50px;
+    min-width: 229px;
+    display: flex;
+    justify-content: space-between;
 }
 
 @media only screen and (max-width: 600px) {

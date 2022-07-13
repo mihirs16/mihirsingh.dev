@@ -1,11 +1,10 @@
-import type { NextComponentType } from "next"; 
 import styles from "../styles/navbar.module.css";
 import Image from "next/image";
 
 // images
 import menuBtn from "../public/icons/menu-btn.svg";
 
-export const Navbar: NextComponentType = () => {
+export const Navbar = () => {
    return (
    <div className={styles.navbar}>
         <div>

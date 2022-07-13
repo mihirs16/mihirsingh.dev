@@ -1,0 +1,14 @@
+.button {
+    width: 111px;
+    height: 43px;
+    border: 1px solid #000000;
+
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
