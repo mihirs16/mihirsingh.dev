@@ -1,18 +1,15 @@
 .navbar {
     position: sticky;
-    top: 20px;
-    margin-top: 20px;
-    margin-left: 190px;
-    margin-right: 190px;
+    top: 0px;
+    margin-inline: 190px;
     display: flex;
     justify-content: space-between;
+    background-color: #ffffff;
+    z-index: 10;
 }
 
 @media only screen and (max-width: 600px) {
     .navbar {
-        top: 10px;
-        margin-top: 10px;
-        margin-right: 20px;
-        margin-left: 20px;
+        margin-inline: 20px;
     }
 }

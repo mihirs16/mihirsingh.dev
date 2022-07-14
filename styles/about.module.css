@@ -1,0 +1,16 @@
+.about {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutContent {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #5F5F5F;
+    max-width: 630px;
+    margin-inline: 20px;
+    text-align: justify;
+}
