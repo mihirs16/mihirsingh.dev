@@ -6,6 +6,7 @@ import styles from '../styles/experience.module.css';
 import briefcaseIcon from '../public/icons/briefcase-icon.svg';
 
 interface ExperienceData {
+    key:        number,
     company:    string,
     role:       string,
     dateRange:  string,
@@ -17,6 +18,7 @@ interface ExperienceData {
 export const Experience = () => {
     const experiences = [
         {
+            key: 0,
             company:    "Kloudrac Softwares Pvt. Ltd.",
             role:       "Developer Intern",
             dateRange:  "January 2021 - May 2021",
@@ -27,6 +29,7 @@ export const Experience = () => {
             ]
         },
         {
+            key:        1,
             company:    "Kloudrac Softwares Pvt. Ltd.",
             role:       "Developer Intern",
             dateRange:  "January 2021 - May 2021",
@@ -37,6 +40,7 @@ export const Experience = () => {
             ]
         },
         {
+            key:        2,
             company:    "Kloudrac Softwares Pvt. Ltd.",
             role:       "Developer Intern",
             dateRange:  "January 2021 - May 2021",
@@ -47,6 +51,7 @@ export const Experience = () => {
             ]
         },
         {
+            key:        3,
             company:    "Kloudrac Softwares Pvt. Ltd.",
             role:       "Developer Intern",
             dateRange:  "January 2021 - May 2021",
@@ -88,8 +93,9 @@ const ExperienceCard = (props: ExperienceData) => {
         hover: { display: 'block' }
     }
 
+    let detailIndex = 0;
     const details = props.details.map(detail => { return (
-            <div style={{ marginBottom: '10px' }}>
+            <div key={detailIndex++} style={{ marginBottom: '10px' }}>
                 - {detail}
             </div>
         ); 

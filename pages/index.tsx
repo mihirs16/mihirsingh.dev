@@ -1,3 +1,4 @@
+// next js
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
@@ -8,7 +9,27 @@ import { Hero } from '../components/hero';
 import { About } from '../components/about';
 import { Experience } from '../components/experience';
 
-const Home: NextPage = () => {
+// lib
+import { getAboutContent } from '../lib/notion';
+
+interface PageContent {
+    aboutContent: {
+        __html: string
+    }
+};
+
+export async function getServerSideProps () {
+    return {
+        props: {
+            aboutContent: {
+                __html: await getAboutContent()
+            }
+        }
+    }
+}
+
+
+const Home: NextPage<PageContent> = (props: PageContent) => {
     return (
         <>
             <Head>
@@ -21,7 +42,7 @@ const Home: NextPage = () => {
             <main className={styles.main}>
                 <Navbar />
                 <Hero />
-                <About />
+                <About content={props.aboutContent}/>
                 <Experience />
             </main>
 
