@@ -7,15 +7,19 @@ import styles from '../styles/Home.module.css';
 import { Navbar } from '../components/navbar';
 import { Hero } from '../components/hero';
 import { About } from '../components/about';
-import { Experience } from '../components/experience';
+import { Experience, Experiences } from '../components/experience';
 
 // lib
-import { getAboutContent } from '../lib/notion';
+import { 
+    getAboutContent,
+    getExperienceContent
+} from '../lib/notion';
 
 interface PageContent {
     aboutContent: {
         __html: string
-    }
+    },
+    experienceContent: Experiences
 };
 
 export async function getServerSideProps () {
@@ -23,7 +27,8 @@ export async function getServerSideProps () {
         props: {
             aboutContent: {
                 __html: await getAboutContent()
-            }
+            },
+            experienceContent: await getExperienceContent()
         }
     }
 }
@@ -43,7 +48,7 @@ const Home: NextPage<PageContent> = (props: PageContent) => {
                 <Navbar />
                 <Hero />
                 <About content={props.aboutContent}/>
-                <Experience />
+                <Experience content={props.experienceContent}/>
             </main>
 
             <footer className={styles.footer}>

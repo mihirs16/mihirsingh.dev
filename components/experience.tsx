@@ -5,7 +5,8 @@ import styles from '../styles/experience.module.css';
 // images
 import briefcaseIcon from '../public/icons/briefcase-icon.svg';
 
-interface ExperienceData {
+// experience interface for each experience card
+export interface ExperienceData {
     key:        number,
     company:    string,
     role:       string,
@@ -13,56 +14,17 @@ interface ExperienceData {
     details:    Array<string>
 }
 
-// TODO: experiences interface for list of experiences fetched
+// experiences interface for list of experiences fetched
+export interface Experiences {
+    experiences: Array<ExperienceData>
+}
 
-export const Experience = () => {
-    const experiences = [
-        {
-            key: 0,
-            company:    "Kloudrac Softwares Pvt. Ltd.",
-            role:       "Developer Intern",
-            dateRange:  "January 2021 - May 2021",
-            details:    [
-                "Designed and developed a real-time custom dashboard with test suite using Aura/Lightning Components.",
-                "Established a batch-processing pipeline to sync data between AWS FTP and Salesforce Sales Cloud.",
-                "Provided client consultation for data analytics using Tableau and Salesforce CRM."
-            ]
-        },
-        {
-            key:        1,
-            company:    "Kloudrac Softwares Pvt. Ltd.",
-            role:       "Developer Intern",
-            dateRange:  "January 2021 - May 2021",
-            details:    [
-                "Designed and developed a real-time custom dashboard with test suite using Aura/Lightning Components.",
-                "Established a batch-processing pipeline to sync data between AWS FTP and Salesforce Sales Cloud.",
-                "Provided client consultation for data analytics using Tableau and Salesforce CRM."
-            ]
-        },
-        {
-            key:        2,
-            company:    "Kloudrac Softwares Pvt. Ltd.",
-            role:       "Developer Intern",
-            dateRange:  "January 2021 - May 2021",
-            details:    [
-                "Designed and developed a real-time custom dashboard with test suite using Aura/Lightning Components.",
-                "Established a batch-processing pipeline to sync data between AWS FTP and Salesforce Sales Cloud.",
-                "Provided client consultation for data analytics using Tableau and Salesforce CRM."
-            ]
-        },
-        {
-            key:        3,
-            company:    "Kloudrac Softwares Pvt. Ltd.",
-            role:       "Developer Intern",
-            dateRange:  "January 2021 - May 2021",
-            details:    [
-                "Designed and developed a real-time custom dashboard with test suite using Aura/Lightning Components.",
-                "Established a batch-processing pipeline to sync data between AWS FTP and Salesforce Sales Cloud.",
-                "Provided client consultation for data analytics using Tableau and Salesforce CRM."
-            ]
-        },
-    ];
+interface ExperienceContent {
+    content: Experiences
+}
 
+export const Experience = (props: ExperienceContent) => {
+    const experiences = props.content.experiences; 
     const cardSet = experiences.map(experience => {
         return(<ExperienceCard {...experience}/>);
     });
