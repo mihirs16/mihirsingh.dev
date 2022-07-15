@@ -1,0 +1,46 @@
+.experience {
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.expCard {
+    border: 1px solid black;
+    width: 300px;
+    height: 310px;
+    padding: 20px;
+    font-size: 14px;
+    color: #5F5F5F;
+}
+
+.defContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 200%;
+    height: 250px;
+}
+
+.altContent {
+    display: none;
+    color: white;
+    line-height: 150%;
+}
+
+.cardSet {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    .experience {
+        margin-top: 200px;
+    }
+
+    .cardSet {
+        grid-template-columns: auto;
+    }
+}
