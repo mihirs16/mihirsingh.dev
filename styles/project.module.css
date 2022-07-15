@@ -1,0 +1,39 @@
+.projects {
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardSet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 625px;
+    margin-inline: 20px;
+    margin-top: 50px;
+}
+
+.card {
+    line-height: 150%;
+    font-size: 14px;
+    color: #5F5F5F;
+    border-bottom: 1px solid black;
+}
+
+.bottomSectionCard {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.cardSetFooter {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #5F5F5F;
+    display: flex;
+    justify-content: end;
+    max-width: 625px;
+    margin-left: auto;
+}

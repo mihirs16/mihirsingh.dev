@@ -26,7 +26,7 @@ interface ExperienceContent {
 export const Experience = (props: ExperienceContent) => {
     const experiences = props.content.experiences; 
     const cardSet = experiences.map(experience => {
-        return(<ExperienceCard {...experience}/>);
+        return (<ExperienceCard {...experience}/>);
     });
 
     return (

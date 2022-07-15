@@ -8,18 +8,22 @@ import { Navbar } from '../components/navbar';
 import { Hero } from '../components/hero';
 import { About } from '../components/about';
 import { Experience, Experiences } from '../components/experience';
+import { Projects, ProjectCards } from '../components/projects';
 
 // lib
 import { 
     getAboutContent,
-    getExperienceContent
+    getExperienceContent,
+    getProjectsContent
 } from '../lib/notion';
 
+// interface for data that populates the page
 interface PageContent {
     aboutContent: {
         __html: string
     },
     experienceContent: Experiences
+    projectsContent: ProjectCards
 };
 
 export async function getServerSideProps () {
@@ -28,7 +32,8 @@ export async function getServerSideProps () {
             aboutContent: {
                 __html: await getAboutContent()
             },
-            experienceContent: await getExperienceContent()
+            experienceContent: await getExperienceContent(),
+            projectsContent: await getProjectsContent()
         }
     }
 }
@@ -49,6 +54,7 @@ const Home: NextPage<PageContent> = (props: PageContent) => {
                 <Hero />
                 <About content={props.aboutContent}/>
                 <Experience content={props.experienceContent}/>
+                <Projects content={props.projectsContent}/>
             </main>
 
             <footer className={styles.footer}>
