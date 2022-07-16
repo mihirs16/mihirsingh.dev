@@ -30,7 +30,7 @@ interface PageContent {
     skillsContent: SkillsContent
 };
 
-export async function getServerSideProps () {
+export async function getStaticProps () {
     return {
         props: {
             aboutContent: {
