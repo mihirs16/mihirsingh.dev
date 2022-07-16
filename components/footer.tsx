@@ -30,11 +30,11 @@ export const Footer = () => {
         <div className={styles.footer}>
             <div className={styles.upper}>
                 <div>
-                    <p className={styles.parabreaks}>&reg; 2022, built and designed </p>
-                    <p className={styles.parabreaks}>by mihir singh </p>
+                    <p className={styles.parabreaks}>&reg; 2022, built and designed</p>
+                    <p className={styles.parabreaks}>by mihir singh</p>
                 </div>
                 <a href="mailto:hello@mihirsingh.dev" ><Button text='contact' /></a> 
-                <a href={resumeDriveLink} ><Button text='resume' /> </a>
+                <a href={resumeDriveLink} ><Button text='resume' /></a>
                 <div className={styles.rightUpper}>
                     <p className={styles.parabreaks}>no apis were harmed</p>
                     <p className={styles.parabreaks}>in the making</p>
