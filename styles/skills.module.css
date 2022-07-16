@@ -1,0 +1,33 @@
+.skills {
+    margin-top: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #5C5C5C;
+    font-size: 14px;
+}
+
+.cardSet {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 150px;
+    row-gap: 60px;
+}
+
+.skillCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 200%;
+}
+
+@media only screen and (max-width: 600px) {
+    .skills {
+        margin-top: 200px;
+    }
+
+    .cardSet {
+        column-gap: 30px;
+    }
+}

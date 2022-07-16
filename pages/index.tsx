@@ -9,12 +9,14 @@ import { Hero } from '../components/hero';
 import { About } from '../components/about';
 import { Experience, Experiences } from '../components/experience';
 import { Projects, ProjectCards } from '../components/projects';
+import { Skills, SkillsContent } from '../components/skills';
 
 // lib
 import { 
     getAboutContent,
     getExperienceContent,
-    getProjectsContent
+    getProjectsContent,
+    getSkillsContent
 } from '../lib/notion';
 
 // interface for data that populates the page
@@ -22,18 +24,20 @@ interface PageContent {
     aboutContent: {
         __html: string
     },
-    experienceContent: Experiences
-    projectsContent: ProjectCards
+    experienceContent: Experiences,
+    projectsContent: ProjectCards,
+    skillsContent: SkillsContent
 };
 
 export async function getServerSideProps () {
     return {
         props: {
             aboutContent: {
-                __html: await getAboutContent()
+                __html:         await getAboutContent()
             },
-            experienceContent: await getExperienceContent(),
-            projectsContent: await getProjectsContent()
+            experienceContent:  await getExperienceContent(),
+            projectsContent:    await getProjectsContent(),
+            skillsContent:      await getSkillsContent()
         }
     }
 }
@@ -55,6 +59,7 @@ const Home: NextPage<PageContent> = (props: PageContent) => {
                 <About content={props.aboutContent}/>
                 <Experience content={props.experienceContent}/>
                 <Projects content={props.projectsContent}/>
+                <Skills {...props.skillsContent}/>
             </main>
 
             <footer className={styles.footer}>

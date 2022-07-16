@@ -13,7 +13,7 @@ var notionAPIHeaders = {
 };
 
 // content for the about section
-export async function getAboutContent () {
+export const getAboutContent = async () => {
     const blockID = 'c274ed88-e606-4595-ad08-4c2f1096be27';
     const rawResponse: Body = await fetch(`${notionAPIPrefix}/blocks/${blockID}`, {
         method: 'GET',
@@ -26,7 +26,7 @@ export async function getAboutContent () {
 };
 
 // content for the experience cards section
-export async function getExperienceContent () {
+export const getExperienceContent = async () => {
     const databaseID = '5d1bac61-a6b6-4daf-a2e3-58eeea7077ef';
     const rawResponse: Body = await fetch(`${notionAPIPrefix}/databases/${databaseID}/query`, {
         method: 'POST',
@@ -51,7 +51,7 @@ export async function getExperienceContent () {
 };
 
 // content for the project cards section
-export async function getProjectsContent () {
+export const getProjectsContent = async () =>  {
     const databaseID = '0239155c-d419-4ce3-8cee-3710616a2246';
     const rawResponse: Body = await fetch(`${notionAPIPrefix}/databases/${databaseID}/query`, {
         method: 'POST',
@@ -73,4 +73,28 @@ export async function getProjectsContent () {
     };
     
     return projectsContent;
+};
+
+// content for list of skill
+export const getSkillsContent = async () => {
+    const tableID = 'eb791572-e406-4660-9c07-fcae7751254c';
+    const rawResponse: Body = await fetch(`${notionAPIPrefix}/blocks/${tableID}/children?page_size=100`, {
+        method: 'GET',
+        headers: notionAPIHeaders
+    });
+
+    const response: any = await rawResponse.json();
+  
+    const _initValue: any = [];
+    const skillsContent: any = {};
+    response['results'].reduce((_initValue: any, row: any) => {
+        const eachRow = row['table_row']['cells'].flatMap((cells: any) => {
+            if (cells[0]) return [cells[0]['plain_text']];
+            else return [];
+        });
+        
+        skillsContent[eachRow[0]] = eachRow.slice(1);
+    }, _initValue);
+
+    return skillsContent
 };
