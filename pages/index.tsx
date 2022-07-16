@@ -49,7 +49,7 @@ const Home: NextPage<PageContent> = (props: PageContent) => {
         <>
             <Head>
                 <meta name="og:url" content="https://mihirsingh.netlify.com" />
-                <meta name="og:image" content="https://mihirsingh.netlify.com/images/avatar-img.jpeg" />
+                <meta name="og:image" content="https://mihirsingh.netlify.com/images/avatar-img.svg" />
                 <meta name="og:title" content="Mihir Singh" />
                 <meta name="og:description" content="I am a Computer Science Engineering Graduate and currently MSc. student at Queen Mary University London. I love working with distributed systems and have a knack for backend development." />
                 <meta name="og:type" content="Portfolio" />
