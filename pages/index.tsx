@@ -55,7 +55,7 @@ const Home: NextPage<PageContent> = (props: PageContent) => {
                 <meta name="keywords" content="Backend, Fullstack, Azure, Heroku, Salesforce, Node.js, JavaScript, React, Next.js, Python, Flask, GitHub, Systems, Design, Software"/>
                 <meta name="author" content="Mihir Singh" />
                 <meta name="og:title" content="Mihir Singh" />
-                <meta name="og:image" content="/images/avatar-img.svg" />
+                <meta name="og:image" content="https://mihirsingh.netlify.com/images/avatar-img.svg" />
                 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>"/>
             </Head>
 
