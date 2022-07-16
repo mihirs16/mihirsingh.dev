@@ -12,7 +12,7 @@ export const Hero = () => {
     return (
         <div className={styles.hero}>
             <div className={styles.avatar}>
-                <Image src={profilePicture} alt="Mihir Singh" />
+                <Image priority src={profilePicture} alt="Mihir Singh" />
             </div>
             <div className={styles.title}>
                 <h1>Mihir Singh</h1>
