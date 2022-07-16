@@ -25,7 +25,7 @@
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
 }
 
 .cardSetFooter {
@@ -33,7 +33,7 @@
     font-size: 14px;
     color: #5F5F5F;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     max-width: 625px;
     margin-left: auto;
 }

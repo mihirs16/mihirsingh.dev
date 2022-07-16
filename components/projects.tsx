@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import styles from '../styles/project.module.css';
 
 // images
@@ -26,12 +27,29 @@ interface ProjectContent {
 }; 
 
 export const Projects = (props: ProjectContent) => {
+    const dummyVariants = { hover: {} };
+    const textVariants  = { hover: {
+        color: "#fff",
+        background: "#000"
+    } };
+
     const projects = props.content.projects;
     const cardSet = projects.map(project => {
         return (
-            <a href={project.url}>
-                <div className={styles.card}>
-                    <h3><span style={{ background: "#FBFF20" }}>{project.name}</span></h3>
+            <a href={project.url} key={project.key}>
+                <motion.div 
+                    className={styles.card} 
+                    whileHover="hover" 
+                    variants={dummyVariants}
+                >
+                    <h3>
+                        <motion.span 
+                            variants={textVariants} 
+                            style={{ background: "#FBFF20" }}
+                        >
+                            {project.name}
+                        </motion.span>
+                    </h3>
                     <p style={{ color: "#9C9A9A" }}>
                         {project.description}
                     </p>
@@ -43,7 +61,7 @@ export const Projects = (props: ProjectContent) => {
                             <Image src={arrowIcon} alt='link ->' />
                         </div>
                     </div> 
-                </div> 
+                </motion.div> 
             </a>
         );
     });
@@ -54,12 +72,23 @@ export const Projects = (props: ProjectContent) => {
             <h2>projects</h2>
             <div className={styles.cardSet}>
                 {cardSet} 
-                    <a href='https://github.com/mihirs16' className={styles.cardSetFooter}>
-                       <div style={{ marginRight: '10px' }}>
+                    <motion.a 
+                        href='https://github.com/mihirs16' 
+                        className={styles.cardSetFooter}
+                        whileHover="hover"
+
+                    >
+                        <motion.div 
+                            variants={textVariants} 
+                            style={{ 
+                                marginRight: '10px', 
+                                background: "#fff" 
+                            }}
+                        >
                            other projects @github
-                       </div>
-                       <Image src={mLinkIcon} alt="->" />
-                    </a>
+                        </motion.div>
+                        <Image src={mLinkIcon} alt="->" />
+                    </motion.a>
            </div>
         </div>
     );
