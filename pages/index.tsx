@@ -4,12 +4,13 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
 // components
-import { Navbar } from '../components/navbar';
-import { Hero } from '../components/hero';
-import { About } from '../components/about';
-import { Experience, Experiences } from '../components/experience';
-import { Projects, ProjectCards } from '../components/projects';
-import { Skills, SkillsContent } from '../components/skills';
+import { Navbar }                   from '../components/navbar';
+import { Hero }                     from '../components/hero';
+import { About }                    from '../components/about';
+import { Experience, Experiences }  from '../components/experience';
+import { Projects, ProjectCards }   from '../components/projects';
+import { Skills, SkillsContent }    from '../components/skills';
+import { Footer }                   from '../components/footer';
 
 // lib
 import { 
@@ -60,6 +61,7 @@ const Home: NextPage<PageContent> = (props: PageContent) => {
                 <Experience content={props.experienceContent}/>
                 <Projects content={props.projectsContent}/>
                 <Skills {...props.skillsContent}/>
+                <Footer />
             </main>
 
             <footer className={styles.footer}>

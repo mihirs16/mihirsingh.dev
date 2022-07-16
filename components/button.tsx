@@ -2,11 +2,10 @@ import { motion } from "framer-motion";
 import styles from "../styles/button.module.css";
 
 type ButtonProps = {
-    text:       string,
+    text: string,
 };
 
 export const Button = (props: ButtonProps) => {
-    
     return (
         <motion.button 
             style={{ background: "#FFFFFF" }}

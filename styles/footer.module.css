@@ -1,0 +1,70 @@
+.horizontalLineSVG {
+    display: flex;
+    align-items: center;
+}
+
+.footer {
+    margin-top: 200px;
+    margin-bottom: 60px;
+    font-size: 14px;
+    color: #969696;
+    line-height: 200%;
+}
+
+.upper {
+    display: grid;
+    grid-template-columns: 1fr auto auto 1fr;
+    align-items: center;
+    column-gap: 10px;
+    margin-inline: 190px;
+}
+
+.rightUpper {
+    text-align: right;
+}
+
+.lower {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    justify-items: center;
+    column-gap: 30px;
+    max-width: 350px;
+}
+
+.icon1 {
+    display: flex;
+    align-items: center;
+}
+
+.icon2 {
+    display: flex;
+    align-items: center;
+}
+
+.icon1::after {
+  content: '';
+  flex: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 1px;
+  background-color: #000;
+}
+
+@media only screen and (max-width: 600px) {
+    .upper {
+        margin-inline: 0px;
+        grid-template-columns: auto;
+        row-gap: 10px;
+        text-align: center;
+        justify-items: center;
+    }
+
+    .rightUpper {
+        text-align: center;
+    }
+
+    .lower {
+        column-gap: 10px;
+    }
+}
