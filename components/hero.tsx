@@ -8,6 +8,7 @@ import profilePicture from "../public/images/avatar-img.svg";
 import { Button } from "./button";
 
 export const Hero = () => {
+    const resumeDriveLink: string = "https://drive.google.com/file/d/196QUZrBFT1_tDXSZGosgTv9-fu-fzp96/view?usp=sharing";
     return (
         <div className={styles.hero}>
             <div className={styles.avatar}>
@@ -18,8 +19,8 @@ export const Hero = () => {
                 <h2>engineer | developer | student</h2>
             </div>
             <div className={styles.btnGrp}>
-                <Button text="contact" />
-                <Button text="resume"  /> 
+                <a href="mailto:hello@mihirsingh.dev"><Button text="contact" /></a>
+                <a href={resumeDriveLink}><Button text="resume" /></a> 
             </div>
         </div>
     );

@@ -25,21 +25,23 @@ export const Footer = () => {
         );
     };   
 
+
+    const resumeDriveLink: string = "https://drive.google.com/file/d/196QUZrBFT1_tDXSZGosgTv9-fu-fzp96/view?usp=sharing";
     return (
         <div className={styles.footer}>
             <div className={styles.upper}>
                 <p>&reg; 2022, built and designed <br/> by mihir singh </p>
-                <Button text='contact' /> 
-                <Button text='resume' />
+                <a href="mailto:hello@mihirsingh.dev" ><Button text='contact' /></a> 
+                <a href={resumeDriveLink} ><Button text='resume' /> </a>
                 <p className={styles.rightUpper}>no apis were harmed<br/> in the making</p>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
             <div className={styles.lower}>
-                <Image src={linkedinIcon} alt='linkedin'/>
+                <a href="https://www.linkedin.com/in/mihir-singh-456a5916a/"><Image src={linkedinIcon} alt='linkedin'/></a>
                 <HorizontalLineSVG />
-                <Image src={githubIcon} alt='github' />
+                <a href="https://github.com/mihirs16"><Image src={githubIcon} alt='github' /></a>
                 <HorizontalLineSVG />
-                <Image src={twitterIcon} alt='twitter' />
+                <a href="https://twitter.com/__heheboi__"><Image src={twitterIcon} alt='twitter' /></a>
             </div>
             </div>
         </div> 
