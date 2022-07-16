@@ -51,6 +51,10 @@
   background-color: #000;
 }
 
+.parabreaks {
+    margin: 0px;
+}
+
 @media only screen and (max-width: 600px) {
     .upper {
         margin-inline: 0px;

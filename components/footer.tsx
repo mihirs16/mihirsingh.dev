@@ -25,15 +25,20 @@ export const Footer = () => {
         );
     };   
 
-
     const resumeDriveLink: string = "https://drive.google.com/file/d/196QUZrBFT1_tDXSZGosgTv9-fu-fzp96/view?usp=sharing";
     return (
         <div className={styles.footer}>
             <div className={styles.upper}>
-                <p>&reg; 2022, built and designed <br/> by mihir singh </p>
+                <div>
+                    <p className={styles.parabreaks}>&reg; 2022, built and designed </p>
+                    <p className={styles.parabreaks}> by mihir singh </p>
+                </div>
                 <a href="mailto:hello@mihirsingh.dev" ><Button text='contact' /></a> 
                 <a href={resumeDriveLink} ><Button text='resume' /> </a>
-                <p className={styles.rightUpper}>no apis were harmed<br/> in the making</p>
+                <div className={styles.rightUpper}>
+                    <p className={styles.parabreaks}>no apis were harmed</p>
+                    <p className={styles.parabreaks}> in the making</p>
+                </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
             <div className={styles.lower}>
