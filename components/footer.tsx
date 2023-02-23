@@ -10,7 +10,7 @@ import linkedinIcon from '../public/icons/linkedin.svg';
 import twitterIcon  from '../public/icons/twitter.svg';
 
 
-export const Footer = () => {
+export const Footer = (props: { resumeLink: string }) => {
     const HorizontalLineSVG = () => {
         return (
             <div className={styles.horizontalLineSVG}>
@@ -25,7 +25,7 @@ export const Footer = () => {
         );
     };   
 
-    const resumeDriveLink: string = "https://drive.google.com/file/d/196QUZrBFT1_tDXSZGosgTv9-fu-fzp96/view?usp=sharing";
+    const resumeDriveLink: string = props.resumeLink;
     return (
         <div className={styles.footer}>
             <div className={styles.upper}>

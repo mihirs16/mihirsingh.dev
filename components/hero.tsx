@@ -7,8 +7,8 @@ import profilePicture from "../public/images/avatar-img.svg";
 // components
 import { Button } from "./button";
 
-export const Hero = () => {
-    const resumeDriveLink: string = "https://drive.google.com/file/d/196QUZrBFT1_tDXSZGosgTv9-fu-fzp96/view?usp=sharing";
+export const Hero = (props: { resumeLink: string }) => {
+    const resumeDriveLink: string = props.resumeLink;
     return (
         <div className={styles.hero}>
             <div className={styles.avatar}>

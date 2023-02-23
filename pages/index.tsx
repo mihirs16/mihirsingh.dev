@@ -17,7 +17,8 @@ import {
     getAboutContent,
     getExperienceContent,
     getProjectsContent,
-    getSkillsContent
+    getSkillsContent,
+    getResumeLink
 } from '../lib/notion';
 
 // interface for data that populates the page
@@ -27,7 +28,8 @@ interface PageContent {
     },
     experienceContent: Experiences,
     projectsContent: ProjectCards,
-    skillsContent: SkillsContent
+    skillsContent: SkillsContent,
+    resumeLink: string
 };
 
 export async function getStaticProps () {
@@ -38,7 +40,8 @@ export async function getStaticProps () {
             },
             experienceContent:  await getExperienceContent(),
             projectsContent:    await getProjectsContent(),
-            skillsContent:      await getSkillsContent()
+            skillsContent:      await getSkillsContent(),
+            resumeLink:         await getResumeLink()
         }
     }
 }
@@ -64,12 +67,12 @@ const Home: NextPage<PageContent> = (props: PageContent) => {
 
             <main className={styles.main}>
                 <Navbar />
-                <Hero />
+                <Hero resumeLink={props.resumeLink}/>
                 <About content={props.aboutContent}/>
                 <Experience content={props.experienceContent}/>
                 <Projects content={props.projectsContent}/>
                 <Skills {...props.skillsContent}/>
-                <Footer />
+                <Footer resumeLink={props.resumeLink}/>
             </main>
 
             <footer className={styles.footer}>
