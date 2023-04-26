@@ -101,14 +101,14 @@ export const getSkillsContent = async () => {
 
 // get link to pdf of resume
 export const getResumeLink = async () => {
-    const blockID = "596c0852-a401-4a97-a3d2-0e939e0c6271";
+    const blockID = "60ee43eb-b625-4a81-a0a3-38c4ba41e921";
     const rawResponse: Body = await fetch(`${notionAPIPrefix}/blocks/${blockID}`, {
         method: 'GET',
         headers: notionAPIHeaders
     });
     
     const response: any = await rawResponse.json();
-    const resumeLink = response['file']['file']['url'];
+    const resumeLink = response['code']['rich_text'][0]['text']['content'];
 
     return resumeLink;
 }
