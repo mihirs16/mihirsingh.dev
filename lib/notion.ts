@@ -1,4 +1,3 @@
-import fetch, { Body } from 'node-fetch';
 import { Experiences, ExperienceData } from '../components/experience';
 import { ProjectCard, ProjectCards } from '../components/projects';
 

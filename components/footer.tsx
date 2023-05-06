@@ -26,11 +26,12 @@ export const Footer = (props: { resumeLink: string }) => {
     };   
 
     const resumeDriveLink: string = props.resumeLink;
+    const date: Date = new Date();
     return (
         <div className={styles.footer}>
             <div className={styles.upper}>
                 <div>
-                    <p className={styles.parabreaks}>&reg; 2022, built and designed</p>
+                    <p className={styles.parabreaks}>&reg; {date.getFullYear()}, built and designed</p>
                     <p className={styles.parabreaks}>by mihir singh</p>
                 </div>
                 <a href="mailto:hello@mihirsingh.dev" ><Button text='contact' /></a> 
